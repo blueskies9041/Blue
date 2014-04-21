@@ -1,0 +1,35 @@
+class AStarGridEdge(object):
+	def __init__(self, _source, _target):
+		self.source = _source
+		self.target = _target
+		#self.cost = 0
+	def Cost(self, _other):
+		diagonal = abs(self.source[0] - self.target[0]) == 1 and abs(self.source[1] - self.target[1]) == 1
+		return 14 if diagonal else 10
+		
+		def GetEdges(self, _node):
+		edges = []
+		for i in range (0, len(self.edges[ self.nodes[_node.x][_node.y]])) :
+			edges.append( (self.edges[ self.nodes[_node.x][_node.y]])[i] )
+		return edges
+	
+	def GetSourceNode(self, _edge):
+		return self.nodes[ _edge.source[0]	][	_edge.source[1] ]
+	
+	def GetTargetNode(self, _edge):
+		return self.nodes[ _edge.target[0]	][	_edge.target[1] ]
+		
+	def DrawEdges(self, _node):
+		s = self.cellSize 
+		#print len(edges)
+		for i in range(0, len(self.GetEdges(_node))):
+			AIE.DrawLine( self.GetEdges(_node)[i].source[0] * s, self.GetEdges(_node)[i].source[1] * s, self.GetEdges(_node)[i].target[0] * s, self.GetEdges(_node)[i].target[1] * s)
+
+for x,y in product( range(_rows), range(_cols)):
+	self.edges[self.nodes[x][y]] = []
+for i,j in product([-1,0,1],[-1,0,1]):
+	if not( 0 <= x + i < _rows) :
+		continue
+	if not( 0 <= y + j < _cols) :
+		continue
+	self.edges[self.nodes[x][y]].append(AStarGridEdge( (x,y) , (x + i, y + j)) )
