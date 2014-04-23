@@ -12,5 +12,7 @@ def make_graph(mapinfo):
             if not (0 <= y + j < mapinfo["height"]): continue
             graph[nodes[x][y]].append(nodes[x+i][y+j])
     return graph, nodes
+
+    
  
 

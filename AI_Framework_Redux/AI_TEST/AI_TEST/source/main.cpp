@@ -29,7 +29,7 @@ int main( int argc, char* argv[] )
 	
 	do 
 	{
-		//Slither.ReloadScript("BlueS");
+		Slither.ReloadScript("BlueS");
 		PyFunc_UpdateGame = Slither.GetFunction("BlueS", "UpdateGame");
 		Slither.CallFunction(PyFunc_UpdateGame, NULL);
 
